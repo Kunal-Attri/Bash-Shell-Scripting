@@ -1,0 +1,9 @@
+total 10
+drwxrwxrwx 1 root root  504 May 29 21:41 .
+drwxrwxrwx 1 root root 4096 May 29 19:54 ..
+-rwxrwxrwx 1 root root  326 May 29 20:08 bestdayever.sh
+-rwxrwxrwx 1 root root    0 May 29 21:42 file1.txt
+-rwxrwxrwx 1 root root   51 May 29 21:36 file2.txt
+-rwxrwxrwx 1 root root   32 May 29 20:22 file.txt
+-rwxrwxrwx 1 root root 3795 May 29 21:41 helloScript.sh
+-rwxrwxrwx 1 root root  140 May 29 19:48 himom.sh
