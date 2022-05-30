@@ -535,3 +535,12 @@ done
 
 # WAIT FOR FILESYSTEM EVENTS WITH I-NODE NOTIFY
 
+# inotify is to monitor directories and files
+# sudo apt install inotify
+mkdir -p newFolder
+inotifywait -m newFolder
+# now try making changes in directory, it will monitor everything
+
+
+
+
