@@ -403,9 +403,78 @@ echo $returningValue
 
 funcCheck
 echo $returningValue
+
+
+
+# DIRECTORIES AND FILES
+
+# create folder, -p to avoid error if directory already exists
+mkdir -p directory2
+
+# to check if a directory exists
+echo -n "Enter directory name to check: "
+read direct
+# -d is to check if directory exists or not
+if [ -d "$direct" ]; then
+	echo "$direct exists"
+else
+	echo "$direct does not exists"
+fi
+
+# creating a file
+echo -n "Enter file name to create: "
+read fileName
+
+touch $fileName
+
+# checking if a file exists
+echo -n "Enter file name to check: "
+read fileName
+# -f is to check if file exists or not
+if [ -f "$fileName" ]; then
+	echo "$fileName exists"
+else
+	echo "$fileName does not exists"
+fi
+
+# appending text into file
+echo -n "Enter file name to append: "
+read fileName
+if [[ -f "$fileName" ]]; then
+	echo -n "Enter text to append: "
+	read fileText
+	# double arrow to append.... single > for writing by removing all prev text
+	echo "$fileText" >> $fileName
+else
+	echo "$fileName does not exists"
+fi
+
+# reading file line by line
+echo -n "Enter file name to read: "
+read fileName
+if [[ -f "$fileName" ]]; then
+	# IFS is for dealing with white spaces, alos we can write IFS=""
+	while IFS= read -r line
+	do
+		echo "$line"
+	done < $fileName
+else
+	echo "$fileName does not exists"
+fi
+
+# deleting a file
+echo -n "Enter file name to delete: "
+read fileName
+if [[ -f "$fileName" ]]; then
+	rm $fileName
+	echo "$fileName has been deleted!"
+else
+	echo "$fileName does not exists"
+fi
 '
 
-# 
+
+# SENDING EMAIL VIA SCRIPT
 
 
 
