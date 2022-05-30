@@ -376,7 +376,37 @@ echo "${car[@]}"
 # updating values
 car[1]="Suzuki"
 echo "${car[@]}"
-'
+
 
 # FUNCTIONS
+
+function funcPrint()
+{
+	echo $1 $2 $3 $4
+}
+
+funcPrint Hi this is Kunal
+
+function funcCheck() {
+	returningValue="Using function right now"
+	echo "$returningValue"
+}
+
+funcCheck
+
+function funcCheck() {
+	returningValue="I love linux"
+}
+
+returningValue="I love Mac"
+echo $returningValue
+
+funcCheck
+echo $returningValue
+'
+
+# 
+
+
+
 
