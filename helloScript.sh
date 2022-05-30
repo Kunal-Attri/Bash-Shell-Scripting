@@ -474,7 +474,23 @@ fi
 '
 
 
-# SENDING EMAIL VIA SCRIPT
+# CURL IN SCRIPTS
+
+url="https://proof.ovh.net/files/1Mb.dat"
+
+# -O to inherit original fileName
+curl ${url} -O
+
+# -o fileName to change filename
+curl ${url} -o newfiledw
+
+# another way using >
+curl ${url} > outputfile
+
+# to check if the file is right or wrong
+curl -I ${url}
+
+
 
 
 
