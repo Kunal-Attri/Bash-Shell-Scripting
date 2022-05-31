@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MULTI LINE COMMENT -> : '... ... ...'
-:'
+
 
 # BASIC HELLO WORLD
 echo "Hello Bash Script" > file.txt
@@ -637,5 +637,4 @@ fi
 
 # third: we can debug script in specific lines, i.e. form a line m to line n
 # we can do that by putting, "set -x" from where to start and "set +x" at which to end
-'
 
