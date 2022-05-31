@@ -530,7 +530,7 @@ do
 		echo "Waiting for you to press the key sir!!!"
 	fi
 done
-'
+
 
 
 # WAIT FOR FILESYSTEM EVENTS WITH I-NODE NOTIFY
@@ -540,6 +540,37 @@ done
 mkdir -p newFolder
 inotifywait -m newFolder
 # now try making changes in directory, it will monitor everything
+
+
+
+# GREP
+
+echo -n "Enter file name to search text from: "
+read fileName
+
+if [[ -f $fileName ]]; then
+	echo -n "Enter the text to search: "
+	read grepvar
+	# -i for ifnoring case sensitivity
+	# -n for showing line no.s
+	# -c for counting the no. of existence of that thing
+	# -v for for sowing all lines w/o that word
+	grep -i $grepvar $fileName
+	grep -n $grepvar $fileName
+	grep -c $grepvar $fileName
+	grep -v $grepvar $fileName
+else
+	echo "$fileName doesnt exist!"
+fi
+'
+
+
+# AWK
+# awk is prog lang, its a utility
+# enables programmer to write tiny effective programs
+# also produces formatted outputs
+
+awk 
 
 
 
