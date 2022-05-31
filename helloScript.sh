@@ -562,7 +562,7 @@ if [[ -f $fileName ]]; then
 else
 	echo "$fileName doesnt exist!"
 fi
-'
+
 
 
 # AWK
@@ -570,8 +570,22 @@ fi
 # enables programmer to write tiny effective programs
 # also produces formatted outputs
 
-awk 
+echo -n "Enter file name to print from awk: "
+read fileName
 
+if [[ -f $fileName ]]; then
+	awk "{print}" $fileName
+	# print lines with specific word
+	awk "/Linux/ {print}" $fileName
+	# print 2nd field
+	awk "/Linux/ {print $2}" $fileName
+	# print the 3rd, 4th field
+	awk "/Linux/ {print $3,$4}" $fileName
+	
+else
+	echo "$fileName doesnt exist!"
+fi
+'
 
 
 
