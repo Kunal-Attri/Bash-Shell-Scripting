@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # MULTI LINE COMMENT -> : '... ... ...'
-: '
+:'
 
 # BASIC HELLO WORLD
 echo "Hello Bash Script" > file.txt
@@ -611,8 +611,31 @@ if [[ -f $fileName ]]; then
 else
 	echo "$fileName doesnt exist!"
 fi
+
+
+
+# DEBUGGING BASH SCRIPTS
+
+echo -n "Enter file name to substitute using sed: "
+read fileName
+
+#if [[-f $fileName ]]; then
+if [[ -f $fileName ]]; then
+	sed -i "s/2000/8000/g" $fileName
+else
+	echo "$fileName doesnt exist!"
+fi
+
+# Ways to debug script
+
+# first: run script and check error
+
+# second: another is ...  bash -x scriptName -> this shows step by step which line is being executed 
+# and in which order is which line executed
+
+# put -x next to shebang, and it debugs in the same above way ... #!/bin/bash -x
+
+# third: we can debug script in specific lines, i.e. form a line m to line n
+# we can do that by putting, "set -x" from where to start and "set +x" at which to end
 '
-
-
-
 
