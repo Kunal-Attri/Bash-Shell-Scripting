@@ -585,7 +585,34 @@ if [[ -f $fileName ]]; then
 else
 	echo "$fileName doesnt exist!"
 fi
+
+
+
+# SED
+# Stream Editor -  for manipulating text files
+
+echo -n "Enter file name to substitute using sed: "
+read fileName
+
+if [[ -f $fileName ]]; then
+	# first s means substitute
+	# substituting i with I
+	# default replace only first i in each line
+	cat $fileName | sed "s/i/I/"
+	# add g in end to make global, i.e. replace all i with I
+	# another way
+	sed "s/i/I/g" $fileName
+	# changes are not made inside file, but just o/p
+	sed "s/i/I/g" $fileName > newFile.txt
+	# making changes directly to main file, -i
+	sed -i "s/i/I/g" $fileName
+	# we can also replace words, eg
+	sed -i "s/LInux/Unix/g" $fileName
+else
+	echo "$fileName doesnt exist!"
+fi
 '
+
 
 
 
